@@ -1,38 +1,113 @@
 .App {
-  text-align: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ubuntu);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    background: var(--main);
+    width: 80%;
+    height: 90%;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.appname{
+    font-weight: 600;
+    font-size: 2em;
+    color: var(--button-text);
+}
+.date {
+    font-weight: 600;
+    font-size: 1.5em;
+    color: var(--button-text);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn {
+    font-size: 2em;
+    height: 100px;
+    width: 100px;
+    border: none;
+    border-radius: 50%;
+    background: var(--button);
+    color: var(--button-text);
+    transform: scale(1);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.timer {
+    font-size: 2em;
+    height: 200px;
+    width: 205px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.timer::before {
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 205px;
+    border: 5px solid var(--button-text);
+    border-radius: 50%;
+    animation: spin 5s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.popup {
+    font-size: 1.5em;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    background: var(--main);
+    z-index: 99;
+}
+
+.popup .btn-pop {
+    font-size: 0.8em;
+    padding: 0.5em 1.5em;
+    color: var(--button-text);
+    background: var(--button);
+    border: none;
+    border-radius: 10px;
+    margin: 0 1em;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.popup .btn-pop:hover {
+    background: var(--button-text);
+    color: var(--button);
+}
+.week-timer{
+    font-size: 1.5em;
+}
+.canvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
 }
